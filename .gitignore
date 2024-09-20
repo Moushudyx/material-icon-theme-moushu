@@ -16,3 +16,4 @@ icons/clones
 
 src/scripts/preview/*.html
 src/scripts/contributors/*.html
+package-lock.json
