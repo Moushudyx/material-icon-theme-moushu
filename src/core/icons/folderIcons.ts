@@ -949,16 +949,21 @@ folderIcons[0].icons = folderIcons[0].icons!.concat([
   {
     name: 'folder-o2-act', // 活动
     folderNames: ['o2Act', 'o2Activity'],
-    clone: { base: 'folder-o2-prod', color: 'purple-600' },
+    clone: { base: 'folder-o2-prod', color: 'deep-purple-600' },
   },
   {
     name: 'folder-o2-addr', // 地址
     folderNames: ['o2Addr', 'o2Address'],
-    clone: { base: 'folder-o2-prod', color: 'pink-400' },
+    clone: { base: 'folder-o2-prod', color: 'purple-600' },
   },
   {
     name: 'folder-o2-afts', // 售后
     folderNames: ['o2Afts', 'o2AfterSale'],
+    clone: { base: 'folder-o2-prod', color: 'pink-400' },
+  },
+  {
+    name: 'folder-o2-cust', // 客服
+    folderNames: ['o2Cust', 'o2Custom'],
     clone: { base: 'folder-o2-prod', color: 'red-600' },
   },
   {
@@ -982,7 +987,7 @@ folderIcons[0].icons = folderIcons[0].icons!.concat([
     clone: { base: 'folder-o2-prod', color: 'yellow-800' },
   },
   {
-    name: 'folder-o2-mid', // 营销
+    name: 'folder-o2-mid', // 中间页
     folderNames: ['o2Mid', 'o2Middle'],
     clone: { base: 'folder-o2-prod', color: 'gray-700' },
   },
