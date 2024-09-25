@@ -29,7 +29,7 @@
     "prepublishOnly": "bun ./src/scripts/module/prepare.ts",
     "postpublish": "git checkout package.json && git checkout README.md"
   },
-  "publisher": "PKief",
+  "publisher": "Moushu",
   "author": {
     "name": "Philipp Kief",
     "email": "philipp.kief@gmx.de",
@@ -78,9 +78,9 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "./dist/extension/desktop/extension.cjs",
-  "browser": "./dist/extension/web/extension.cjs",
-  "module": "./dist/module/index.cjs",
+  "main": "./dist/extension/desktop/extension.js",
+  "browser": "./dist/extension/web/extension.js",
+  "module": "./dist/module/index.js",
   "types": "./dist/types/module/index.d.ts",
   "sideEffects": false,
   "contributes": {
