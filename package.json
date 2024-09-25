@@ -1,8 +1,8 @@
 {
-  "name": "material-icon-theme",
-  "displayName": "Material Icon Theme",
-  "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.11.1",
+  "name": "material-icon-theme-moushu",
+  "displayName": "Material Icon Theme O2 Dev",
+  "description": "A Fork of Material Design Icons for O2 Dev",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
@@ -29,7 +29,7 @@
     "prepublishOnly": "bun ./src/scripts/module/prepare.ts",
     "postpublish": "git checkout package.json && git checkout README.md"
   },
-  "publisher": "PKief",
+  "publisher": "Moushu",
   "author": {
     "name": "Philipp Kief",
     "email": "philipp.kief@gmx.de",
@@ -45,7 +45,7 @@
   "homepage": "https://github.com/material-extensions/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/material-extensions/vscode-material-icon-theme.git"
+    "url": "git+https://github.com/material-extensions/vscode-material-icon-theme-moushu.git"
   },
   "bugs": {
     "url": "https://github.com/material-extensions/vscode-material-icon-theme/issues"
@@ -78,68 +78,68 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "./dist/extension/desktop/extension.cjs",
-  "browser": "./dist/extension/web/extension.cjs",
-  "module": "./dist/module/index.cjs",
+  "main": "./dist/extension/desktop/extension.js",
+  "browser": "./dist/extension/web/extension.js",
+  "module": "./dist/module/index.js",
   "types": "./dist/types/module/index.d.ts",
   "sideEffects": false,
   "contributes": {
     "iconThemes": [
       {
-        "id": "material-icon-theme",
-        "label": "Material Icon Theme",
+        "id": "material-icon-theme-moushu",
+        "label": "Material Icon Theme Moushu",
         "path": "./dist/material-icons.json",
         "_watch": true
       }
     ],
     "commands": [
       {
-        "command": "material-icon-theme.activateIcons",
+        "command": "material-icon-theme-moushu.activateIcons",
         "title": "%command.activateIcons%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.toggleIconPacks",
+        "command": "material-icon-theme-moushu.toggleIconPacks",
         "title": "%command.toggleIconPacks%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeFolderTheme",
+        "command": "material-icon-theme-moushu.changeFolderTheme",
         "title": "%command.changeFolderTheme%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeFolderColor",
+        "command": "material-icon-theme-moushu.changeFolderColor",
         "title": "%command.changeFolderColor%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeFileColor",
+        "command": "material-icon-theme-moushu.changeFileColor",
         "title": "%command.changeFileColor%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.restoreDefaultConfig",
+        "command": "material-icon-theme-moushu.restoreDefaultConfig",
         "title": "%command.restoreDefaultConfig%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.toggleExplorerArrows",
+        "command": "material-icon-theme-moushu.toggleExplorerArrows",
         "title": "%command.toggleExplorerArrows%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeOpacity",
+        "command": "material-icon-theme-moushu.changeOpacity",
         "title": "%command.changeOpacity%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.toggleGrayscale",
+        "command": "material-icon-theme-moushu.toggleGrayscale",
         "title": "%command.toggleGrayscale%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeSaturation",
+        "command": "material-icon-theme-moushu.changeSaturation",
         "title": "%command.changeSaturation%",
         "enablement": "!isWeb"
       }
@@ -148,7 +148,7 @@
       "type": "object",
       "title": "%configuration.title%",
       "properties": {
-        "material-icon-theme.activeIconPack": {
+        "material-icon-theme-moushu.activeIconPack": {
           "type": "string",
           "default": "angular",
           "description": "%configuration.activeIconPack%",
@@ -175,22 +175,22 @@
             "none"
           ]
         },
-        "material-icon-theme.files.associations": {
+        "material-icon-theme-moushu.files.associations": {
           "type": "object",
           "default": {},
           "description": "%configuration.files.associations%"
         },
-        "material-icon-theme.folders.associations": {
+        "material-icon-theme-moushu.folders.associations": {
           "type": "object",
           "default": {},
           "description": "%configuration.folders.associations%"
         },
-        "material-icon-theme.languages.associations": {
+        "material-icon-theme-moushu.languages.associations": {
           "type": "object",
           "default": {},
           "description": "%configuration.languages.associations%"
         },
-        "material-icon-theme.files.customClones": {
+        "material-icon-theme-moushu.files.customClones": {
           "type": "array",
           "default": [],
           "items": {
@@ -264,7 +264,7 @@
           },
           "description": "%configuration.customClones%"
         },
-        "material-icon-theme.folders.customClones": {
+        "material-icon-theme-moushu.folders.customClones": {
           "type": "array",
           "default": [],
           "items": {
@@ -297,7 +297,7 @@
           },
           "description": "%configuration.customClones%"
         },
-        "material-icon-theme.folders.theme": {
+        "material-icon-theme-moushu.folders.theme": {
           "type": "string",
           "default": "specific",
           "description": "%configuration.folders.theme%",
@@ -312,43 +312,43 @@
             "none"
           ]
         },
-        "material-icon-theme.folders.color": {
+        "material-icon-theme-moushu.folders.color": {
           "type": "string",
           "default": "#90a4ae",
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
         },
-        "material-icon-theme.files.color": {
+        "material-icon-theme-moushu.files.color": {
           "type": "string",
           "default": "#90a4ae",
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.files.color%"
         },
-        "material-icon-theme.opacity": {
+        "material-icon-theme-moushu.opacity": {
           "type": "number",
           "default": 1,
           "minimum": 0,
           "maximum": 1,
           "description": "%configuration.opacity%"
         },
-        "material-icon-theme.hidesExplorerArrows": {
+        "material-icon-theme-moushu.hidesExplorerArrows": {
           "type": "boolean",
           "default": false,
           "description": "%configuration.hidesExplorerArrows%"
         },
-        "material-icon-theme.saturation": {
+        "material-icon-theme-moushu.saturation": {
           "type": "number",
           "default": 1,
           "minimum": 0,
           "maximum": 1,
           "description": "%configuration.saturation%"
         },
-        "material-icon-theme.enableLogging": {
+        "material-icon-theme-moushu.enableLogging": {
           "type": "boolean",
           "default": false,
           "description": "%configuration.enableLogging%"
         },
-        "material-icon-theme.logLevel": {
+        "material-icon-theme-moushu.logLevel": {
           "type": "string",
           "default": "info",
           "enum": [

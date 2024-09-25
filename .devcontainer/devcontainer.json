@@ -1,19 +1,15 @@
 {
-  "name": "vscode-material-icon-theme",
-
+  "name": "material-icon-theme-moushu",
   // Use Microsoft's Ubuntu Base image for the dev container
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/michidk/devcontainers-features/bun:1": {}
   },
-
   "privileged": true,
-
   "onCreateCommand": {
     // Install dependencies in the dev container
     "install-bun-packages": "bun install"
   },
-
   "customizations": {
     "vscode": {
       "settings": {
