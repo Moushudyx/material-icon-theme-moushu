@@ -20,7 +20,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['md', 'markdown', 'rst'],
     },
     { name: 'blink', fileExtensions: ['blink'], light: true },
-    { name: 'css', fileExtensions: ['css'] },
+    { name: 'css', fileExtensions: ['css', 'wxss', 'ttss'] },
     { name: 'sass', fileExtensions: ['scss', 'sass'] },
     { name: 'less', fileExtensions: ['less'] },
     { name: 'just', fileNames: ['justfile', '.justfile'] },
@@ -81,6 +81,8 @@ export const fileIcons: FileIcons = {
     {
       name: 'xml',
       fileExtensions: [
+        'wxml',
+        'ttml',
         'xml',
         'plist',
         'xsd',
@@ -2678,7 +2680,7 @@ export const fileIcons: FileIcons = {
       name: 'zeabur',
       fileExtensions: ['zeabur'],
       patterns: {
-        'zeabur': FileNamePattern.Configuration,
+        zeabur: FileNamePattern.Configuration,
       },
       light: true,
     },
