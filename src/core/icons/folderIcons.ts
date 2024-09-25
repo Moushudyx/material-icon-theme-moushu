@@ -931,8 +931,8 @@ const folderIcons: FolderTheme[] = [
       { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
       {
         name: 'folder-powershell',
-        folderNames: ["powershell", "ps", "ps1"]
-      }
+        folderNames: ['powershell', 'ps', 'ps1'],
+      },
     ],
   },
   {
@@ -953,42 +953,52 @@ folderIcons[0].icons = folderIcons[0].icons!.concat([
   {
     name: 'folder-o2-act', // 活动
     folderNames: ['o2Act', 'o2Activity'],
-    clone: { base: 'folder-o2-prod', color: 'deep-purple-600' },
+    clone: { base: 'folder-o2-prod', color: 'indigo-700' },
   },
   {
     name: 'folder-o2-addr', // 地址
     folderNames: ['o2Addr', 'o2Address'],
-    clone: { base: 'folder-o2-prod', color: 'purple-600' },
+    clone: { base: 'folder-o2-prod', color: 'deep-purple-600' },
   },
   {
     name: 'folder-o2-afts', // 售后
     folderNames: ['o2Afts', 'o2AfterSale'],
-    clone: { base: 'folder-o2-prod', color: 'pink-400' },
+    clone: { base: 'folder-o2-prod', color: 'purple-600' },
   },
   {
     name: 'folder-o2-cust', // 客服
     folderNames: ['o2Cust', 'o2Custom'],
+    clone: { base: 'folder-o2-prod', color: 'pink-400' },
+  },
+  {
+    name: 'folder-o2-cmt', // 评论
+    folderNames: ['o2Cmt', 'o2Comment'],
     clone: { base: 'folder-o2-prod', color: 'red-600' },
   },
   {
     name: 'folder-o2-dyn', // 动态
     folderNames: ['o2Dyn', 'o2Dynamic'],
-    clone: { base: 'folder-o2-prod', color: 'deep-orange-500' },
+    clone: { base: 'folder-o2-prod', color: 'red-600' },
   },
   {
     name: 'folder-o2-invc', // 发票
     folderNames: ['o2Invc', 'o2Invoice'],
-    clone: { base: 'folder-o2-prod', color: 'orange-600' },
+    clone: { base: 'folder-o2-prod', color: 'deep-orange-500' },
   },
   {
     name: 'folder-o2-lgn', // 登录
     folderNames: ['o2Lgn', 'o2Login'],
+    clone: { base: 'folder-o2-prod', color: 'orange-600' },
+  },
+  {
+    name: 'folder-o2-live', // 直播
+    folderNames: ['o2Live', 'o2LiveRoom'],
     clone: { base: 'folder-o2-prod', color: 'amber-700' },
   },
   {
     name: 'folder-o2-log', // 物流
     folderNames: ['o2Log', 'o2Logistic'],
-    clone: { base: 'folder-o2-prod', color: 'yellow-800' },
+    clone: { base: 'folder-o2-prod', color: 'yellow-700' },
   },
   {
     name: 'folder-o2-mid', // 中间页
@@ -998,27 +1008,32 @@ folderIcons[0].icons = folderIcons[0].icons!.concat([
   {
     name: 'folder-o2-mkt', // 营销
     folderNames: ['o2Mkt', 'o2Marketing'],
-    clone: { base: 'folder-o2-prod', color: 'yellow-700' },
+    clone: { base: 'folder-o2-prod', color: 'lime-800' },
   },
   {
     name: 'folder-o2-ord', // 订单
     folderNames: ['o2Ord', 'o2Order'],
-    clone: { base: 'folder-o2-prod', color: 'lime-800' },
+    clone: { base: 'folder-o2-prod', color: 'light-green-500' },
   },
   {
     name: 'folder-o2-pay', // 支付
     folderNames: ['o2Pay', 'o2Payment'],
-    clone: { base: 'folder-o2-prod', color: 'light-green-500' },
+    clone: { base: 'folder-o2-prod', color: 'green-700' },
   },
   {
     name: 'folder-o2-prof', // 个人
     folderNames: ['o2Prof', 'o2Profile'],
-    clone: { base: 'folder-o2-prod', color: 'green-700' },
+    clone: { base: 'folder-o2-prod', color: 'teal-400' },
   },
   {
     name: 'folder-o2-sett', // 结算
     folderNames: ['o2Sett', 'o2Settlement'],
-    clone: { base: 'folder-o2-prod', color: 'teal-400' },
+    clone: { base: 'folder-o2-prod', color: 'cyan-400' },
+  },
+  {
+    name: 'folder-o2-srch', // 搜索
+    folderNames: ['o2Srch', 'o2Search'],
+    clone: { base: 'folder-o2-prod', color: 'blue-400' },
   },
   {
     name: 'folder-package-o2-prod', // 商品 | 模块
