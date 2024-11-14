@@ -21,5 +21,23 @@
     "ttss",
     "wxml",
     "wxss"
-  ]
+  ],
+  "editor.formatOnSave": true,
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": "/CONTRIBUTING.md"
+    },
+    {
+      "file": "/src/architecture.md"
+    }
+  ],
+  "github.copilot.chat.reviewSelection.instructions": [
+    {
+      "file": "/CONTRIBUTING.md"
+    }
+  ],
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  }
 }
