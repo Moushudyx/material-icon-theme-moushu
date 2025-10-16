@@ -14,21 +14,17 @@
     "editor.codeActionsOnSave": {
       "quickfix.biome": "explicit",
       "source.organizeImports.biome": "explicit"
-    },
+    }
   },
-  "cSpell.words": [
-    "Invc",
-    "Srch",
-    "ttml",
-    "ttss",
-    "wxml",
-    "wxss"
-  ],
+  "cSpell.words": ["Invc", "Srch", "ttml", "ttss", "wxml", "wxss"],
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
