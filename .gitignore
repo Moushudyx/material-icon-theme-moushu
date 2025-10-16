@@ -34,5 +34,8 @@ package-lock.json
 # Ignore optional eslint cache
 .eslintcache
 
+# Package archives
 *.tgz
-*.tgz
+
+# macOS metadata
+.DS_Store

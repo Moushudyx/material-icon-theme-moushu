@@ -20,9 +20,10 @@
       "extensions": [
         "biomejs.biome",
         "jock.svg",
-        "EditorConfig.EditorConfig",
+        "editorconfig.editorconfig",
         "oven.bun-vscode",
-        "DavidAnson.vscode-markdownlint"
+        "davidanson.vscode-markdownlint",
+        "huntertran.auto-markdown-toc"
       ]
     }
   }
