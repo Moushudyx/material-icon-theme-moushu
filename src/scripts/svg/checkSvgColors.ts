@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { spawn } from 'bun';
 
 /**
@@ -8,21 +9,27 @@ const checkColors = async () => {
     // Execute Git command to get list of modified SVG files
     const gitProcess = spawn([
       'git',
-      'ls-files',
-      '-mo',
-      '--exclude-standard',
+      'diff',
+      '--cached',
+      '--name-only',
       '--',
       '*.svg',
     ]);
     const { stdout } = await gitProcess;
     const output = await new Response(stdout).text();
-    const svgFiles = output.trim().split('\n').join(' ');
+    const svgFiles = output
+      .trim()
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .filter((p) => existsSync(p))
+      .join(' ');
     console.log('SVG files to check:', svgFiles);
 
     if (svgFiles) {
       const command = [
         'svg-color-linter',
-        '--colors',
+        '--config',
         'material-colors.yml',
         ...svgFiles.split(' '),
       ];
@@ -31,6 +38,12 @@ const checkColors = async () => {
       const linterOutput = await new Response(stdout).text();
 
       console.log('Colors check output:\n\n', linterOutput);
+
+      // Wait for the sub process to finish with an exit code
+      await linterProcess.exited;
+
+      // Exit script with exit code (0 == no errors, 1 == errors)
+      process.exit(linterProcess.exitCode);
     } else {
       console.log('No SVG files to check.');
     }

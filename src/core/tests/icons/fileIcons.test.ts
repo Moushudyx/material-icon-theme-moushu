@@ -4,7 +4,7 @@ import { loadFileIconDefinitions } from '../../generator/fileGenerator';
 import type { Config } from '../../models/icons/config';
 import type { FileIcons } from '../../models/icons/files/fileTypes';
 import { IconPack } from '../../models/icons/iconPack';
-import { type Manifest, createEmptyManifest } from '../../models/manifest';
+import { createEmptyManifest, type Manifest } from '../../models/manifest';
 
 describe('file icons', () => {
   let expectedManifest: Manifest;
@@ -89,6 +89,9 @@ describe('file icons', () => {
     );
 
     expectedManifest.iconDefinitions = {
+      angular: {
+        iconPath: './../icons/angular.svg',
+      },
       file: {
         iconPath: './../icons/file.svg',
       },
@@ -194,22 +197,22 @@ describe('file icons', () => {
       file: {
         iconPath: './../icons/file.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       file_light: {
         iconPath: './../icons/file_light.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       file_highContrast: {
         iconPath: './../icons/file_highContrast.svg',
       },
       javascript: {
         iconPath: './../icons/javascript.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       javascript_light: {
         iconPath: './../icons/javascript_light.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       javascript_highContrast: {
         iconPath: './../icons/javascript_highContrast.svg',
       },
@@ -322,6 +325,7 @@ describe('file icons', () => {
         {
           name: 'bar',
           fileExtensions: ['bar'],
+          light: true,
           clone: {
             base: 'foo',
             color: 'green-500',
@@ -349,6 +353,10 @@ describe('file icons', () => {
       bar: {
         iconPath: './../icons/bar.clone.svg',
       },
+      // biome-ignore lint/style/useNamingConvention: _light is our naming convention for icons in light color themes
+      bar_light: {
+        iconPath: './../icons/bar_light.clone.svg',
+      },
       file: {
         iconPath: './../icons/file.svg',
       },
@@ -358,6 +366,12 @@ describe('file icons', () => {
       foo: 'foo',
       bar: 'bar',
       baz: 'bar',
+    };
+    expectedManifest.light = {
+      fileExtensions: {
+        bar: 'bar_light',
+      },
+      fileNames: {},
     };
     expectedManifest.file = 'file';
 

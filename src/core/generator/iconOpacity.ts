@@ -1,4 +1,4 @@
-import { lstat, readFile, readdir } from 'node:fs/promises';
+import { lstat, readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
 import { resolvePath } from '../helpers/resolvePath';
@@ -51,7 +51,7 @@ export const setIconOpacity = async (
  * @param opacity - The opacity value to be validated.
  * @returns True if the opacity value is valid, false otherwise.
  */
-export const validateOpacityValue = (opacity: number | undefined): boolean => {
+export const validateOpacityValue = (opacity?: number): boolean => {
   return opacity !== undefined && opacity <= 1 && opacity >= 0;
 };
 

@@ -17,6 +17,7 @@
     "generateJson": "bun ./src/scripts/icons/generateJson.ts > ./dist/material-icons.json",
     "generateClones": "bun ./src/scripts/icons/generateClones.ts",
     "lint": "biome check",
+    "markdownlint": "markdownlint '**/*.md'",
     "format": "biome format --write ./src",
     "preversion": "bun run contributors && bun run preview && bun run svgo && git add images/*.png icons/*.svg",
     "preview": "bun ./src/scripts/preview/run.ts",
@@ -25,17 +26,18 @@
     "vscode:prepublish": "bun run lint && bun run build",
     "verify": "sheriff verify",
     "prepublishOnly": "bun ./src/scripts/module/prepare.ts",
-    "postpublish": "git checkout package.json && git checkout README.md"
+    "postpublish": "git checkout package.json && git checkout README.md",
+    "prepare": "husky"
   },
   "publisher": "Moushu",
   "author": {
-    "name": "Philipp Kief",
-    "email": "philipp.kief@gmx.de",
-    "url": "https://pkief.com"
+    "name": "Material Extensions",
+    "email": "material-icons-extensions@googlegroups.com",
+    "url": "https://github.com/material-extensions"
   },
-  "funding": "https://github.com/sponsors/PKief",
+  "funding": "https://github.com/sponsors/material-extensions",
   "sponsor": {
-    "url": "https://github.com/sponsors/PKief"
+    "url": "https://github.com/sponsors/material-extensions"
   },
   "engines": {
     "vscode": "^1.52.0"
@@ -50,7 +52,7 @@
   },
   "icon": "logo.png",
   "galleryBanner": {
-    "color": "#1e1e1e",
+    "color": "#282c34",
     "theme": "dark"
   },
   "categories": [
@@ -112,6 +114,16 @@
         "enablement": "!isWeb"
       },
       {
+        "command": "material-icon-theme-moushu.changeRootFolderColor",
+        "title": "%command.changeRootFolderColor%",
+        "enablement": "!isWeb"
+      },
+      {
+        "command": "material-icon-theme-moushu.changeRootFolderColor",
+        "title": "%command.changeRootFolderColor%",
+        "enablement": "!isWeb"
+      },
+      {
         "command": "material-icon-theme-moushu.changeFileColor",
         "title": "%command.changeFileColor%",
         "enablement": "!isWeb"
@@ -160,6 +172,7 @@
             "%configuration.activeIconPack.vue%",
             "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.nest%",
+            "%configuration.activeIconPack.bashly%",
             "%configuration.activeIconPack.none%"
           ],
           "enum": [
@@ -172,6 +185,7 @@
             "vue",
             "vue_vuex",
             "nest",
+            "bashly",
             "none"
           ]
         },
@@ -184,6 +198,11 @@
           "type": "object",
           "default": {},
           "description": "%configuration.folders.associations%"
+        },
+        "material-icon-theme-moushu.rootFolders.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.rootFolders.associations%"
         },
         "material-icon-theme-moushu.languages.associations": {
           "type": "object",
@@ -246,6 +265,7 @@
                     "%configuration.activeIconPack.vue%",
                     "%configuration.activeIconPack.vue_vuex%",
                     "%configuration.activeIconPack.nest%",
+                    "%configuration.activeIconPack.bashly%",
                     "%configuration.activeIconPack.none%"
                   ],
                   "enum": [
@@ -257,6 +277,76 @@
                     "vue",
                     "vue_vuex",
                     "nest",
+                    "bashly",
+                    "none"
+                  ]
+                }
+              }
+            }
+          },
+          "description": "%configuration.customClones%"
+        },
+        "material-icon-theme-moushu.languages.customClones": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%configuration.customClones.name%"
+              },
+              "base": {
+                "type": "string",
+                "description": "%configuration.customClones.base%"
+              },
+              "color": {
+                "type": "string",
+                "description": "%configuration.customClones.color%"
+              },
+              "lightColor": {
+                "type": "string",
+                "description": "%configuration.customClones.lightColor%"
+              },
+              "ids": {
+                "type": "array",
+                "default": [],
+                "description": "%configuration.customClones.ids%",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "activeForPacks": {
+                "type": "array",
+                "default": [
+                  "angular"
+                ],
+                "description": "%configuration.customClones.activeForPacks%",
+                "items": {
+                  "type": "string",
+                  "enumDescriptions": [
+                    "%configuration.activeIconPack.angular%",
+                    "%configuration.activeIconPack.angular_ngrx%",
+                    "%configuration.activeIconPack.react%",
+                    "%configuration.activeIconPack.react_redux%",
+                    "%configuration.activeIconPack.roblox%",
+                    "%configuration.activeIconPack.qwik%",
+                    "%configuration.activeIconPack.vue%",
+                    "%configuration.activeIconPack.vue_vuex%",
+                    "%configuration.activeIconPack.nest%",
+                    "%configuration.activeIconPack.bashly%",
+                    "%configuration.activeIconPack.none%"
+                  ],
+                  "enum": [
+                    "angular",
+                    "angular_ngrx",
+                    "react",
+                    "react_redux",
+                    "qwik",
+                    "vue",
+                    "vue_vuex",
+                    "nest",
+                    "bashly",
                     "none"
                   ]
                 }
@@ -293,6 +383,13 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "rootFolderNames": {
+                "type": "array",
+                "description": "%configuration.customClones.rootFolderNames%",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -318,6 +415,12 @@
           "default": "#90a4ae",
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
+        },
+        "material-icon-theme-moushu.rootFolders.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+          "description": "%configuration.rootFolders.color%"
         },
         "material-icon-theme-moushu.files.color": {
           "type": "string",
@@ -363,28 +466,30 @@
     }
   },
   "dependencies": {
-    "chroma-js": "^3.0.0",
+    "chroma-js": "^3.1.2",
     "fast-deep-equal": "^3.1.3",
     "svgson": "^5.3.1",
     "events": "^3.3.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@softarc/sheriff-core": "^0.18.0",
-    "@types/chroma-js": "^2.4.4",
-    "@types/puppeteer": "^7.0.0",
-    "@types/vscode": "~1.52.0",
-    "axios": "^1.7.2",
-    "bun-types": "^1.1.20",
-    "changelogen": "^0.5.7",
-    "esbuild": "^0.24.0",
-    "puppeteer": "^23.0.0",
+    "@biomejs/biome": "2.2.5",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@softarc/sheriff-core": "^0.19.1",
+    "@types/chroma-js": "^3.1.1",
+    "@types/puppeteer": "^7.0.4",
+    "@types/vscode": "~1.55.0",
+    "axios": "^1.11.0",
+    "bun-types": "^1.2.20",
+    "changelogen": "^0.6.2",
+    "commitlint": "^20.0.0",
+    "esbuild": "^0.25.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "markdownlint-cli": "^0.45.0",
+    "puppeteer": "^24.16.1",
     "rimraf": "^6.0.1",
-    "svg-color-linter": "^2.0.0",
-    "svgo": "^3.0.0",
-    "typescript": "^5.5.4"
-  },
-  "patchedDependencies": {
-    "changelogen@0.5.7": "patches/changelogen@0.5.7.patch"
+    "svg-color-linter": "^3.0.0",
+    "svgo": "^4.0.0",
+    "typescript": "^5.9.2"
   }
 }
