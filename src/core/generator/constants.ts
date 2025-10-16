@@ -6,7 +6,7 @@ export const extensionName = 'material-icon-theme-moushu';
 /**
  * Name of the extension publisher.
  */
-export const extensionPublisher = 'PKief';
+export const extensionPublisher = 'Moushu';
 
 /**
  * Key to identify the log event.

@@ -1467,4 +1467,28 @@ folderIcons[0].icons = folderIcons[0].icons!.concat([
   },
 ]);
 
+// link
+folderIcons[0].icons = folderIcons[0].icons!.concat([
+  {
+    name: 'folder-dms-package', // DMS
+    folderNames: ['dms'],
+    clone: { base: 'folder-o2-prod', color: 'blue-gray-700' },
+  },
+  {
+    name: 'folder-crm-package', // CRM
+    folderNames: ['crm'],
+    clone: { base: 'folder-o2-prod', color: 'indigo-700' },
+  },
+  {
+    name: 'folder-sfa-package', // SFA
+    folderNames: ['sfa'],
+    clone: { base: 'folder-o2-prod', color: 'teal-400' },
+  },
+  {
+    name: 'folder-sfa-ext', // SFA 变体
+    folderNames: ['sfa-action', 'sfa-phaseII'],
+    clone: { base: 'folder-o2-prod', color: 'deep-orange-900' },
+  },
+]);
+
 export { folderIcons };
