@@ -93,7 +93,7 @@ export const fileIcons: FileIcons = {
       name: 'xml',
       fileExtensions: [
         'wxml',
-        'ttml',
+        // 'ttml',
         'xml',
         'plist',
         'xsd',
@@ -1053,6 +1053,15 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
+    {
+      // link 小程序的主要入口文件
+      name: 'vue-main',
+      fileNames: [
+        'crm-main-page.vue',
+        'dms-main-page.vue',
+        'sfa-main-page.vue',
+      ],
+    },
     { name: 'semgrep', fileNames: ['semgrep.yml', '.semgrepignore'] },
     {
       name: 'vue-config',
